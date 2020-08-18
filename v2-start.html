@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Page 1</title>
+</head>
+
+<script>
+    $(document).ready(function () {
+        var requestBody = {
+            searchParams: window.location.search,
+            uriFragment: window.location.hash.substr(1),
+        };
+        console.log(requestBody);
+        $('#span_params').text("Params: " + requestBody.searchParams);
+        $('#span_fragment').text("Fragment: " + requestBody.uriFragment);
+        setTimeout(
+            function () {
+                //history.replaceState('', 'Page 1 End', '/page1-end');
+                window.location.replace("v2-redirect.html?newUrl=" + requestBody.uriFragment);
+            },
+            2000);
+    });
+</script>
+
+<body>
+    <div>
+        <span id="span_params"></span>
+        <br />
+        <span id="span_fragment"></span>
+    </div>
+</body>
+
+</html>

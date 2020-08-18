@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Page 1</title>
+</head>
+
+<script>
+    $(document).ready(function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams);
+        const newUrl = urlParams.get('newUrl');
+        setTimeout(
+            function () {
+                window.location.replace(newUrl);
+            },
+            2000);
+    });
+</script>
+
+<body>
+    <div>
+        V2 Redirect please wait
+    </div>
+</body>
+
+</html>
