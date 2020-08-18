@@ -14,11 +14,11 @@
             uriFragment: window.location.hash.substr(1),
         };
         console.log(requestBody);
-        $('#span_params').text("Params: " + searchParams);
-        $('#span_fragment').text("Fragment: " + uriFragment);
+        $('#span_params').text("Params: " + requestBody.searchParams);
+        $('#span_fragment').text("Fragment: " + requestBody.uriFragment);
         setTimeout(
             function () {
-                history.replaceState('', 'Page 1 End', '/page1-end');
+                //history.replaceState('', 'Page 1 End', '/page1-end');
                 window.location.replace(requestBody.uriFragment);
             },
             2000);
