@@ -18,7 +18,6 @@
         $('#span_fragment').text("Fragment: " + requestBody.uriFragment);
         setTimeout(
             function () {
-                //history.replaceState('', 'Page 1 End', '/page1-end');
                 window.location.replace("v2-redirect.html?newUrl=" + requestBody.uriFragment);
             },
             2000);
